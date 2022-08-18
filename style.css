@@ -72,7 +72,7 @@ h2 {
   color: var(--Fonte-principal);
   margin-left: 40px;
   padding-top: 50px;
-  padding-bottom: 80px;
+  padding-bottom: 2em;
 }
 
 #lista-pocket {
@@ -80,6 +80,7 @@ h2 {
   grid-template-columns: repeat(3, auto);
   margin-left: 60px;
   text-align: center;
+
 }
 
 .item-menu2 {
@@ -93,12 +94,16 @@ h2 {
   border-radius: 15px;
   -webkit-transform: skew(-20deg);
   transform: skew(-20deg);
+  box-shadow: 1px 4px 6px #000;
+
 }
 
 /* MAIN */
 
 .container-middle {
   background: var(--Botao);
+  padding-top: 0;
+  margin-top: 0;
 }
 
 h3 {
@@ -109,7 +114,7 @@ h3 {
   text-transform: uppercase;
 }
 
-p {
+.container_middle_p {
   font-size: 25px;
   color: var(--Fonte-principal);
   text-align: center;
@@ -118,7 +123,7 @@ p {
 
 .box-middle {
   display: grid;
-  grid-template-columns: 40% 60%;
+  grid-template-columns: 60% 40%;
 }
 
 .img-pocket2 {
@@ -134,7 +139,7 @@ p {
 
 .tab-content {
   display: grid;
-  grid-template-columns: 35% 65%;
+  grid-template-columns: 55% 45%;
 }
 
 .item-menu3 {
@@ -160,4 +165,165 @@ p {
 
 footer {
   display: table-row;
+}
+
+/* JANELA MODAL */
+
+.modalDialog {
+  width: 100%;
+  position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  background: rgba(0,0,0,0.7);
+  z-index: 99999;
+  opacity: 0;
+  -webkit-transition: opacity 400ms ease-in;
+  -moz-transition: opacity 400ms ease-in;
+  transition: opacity 400ms ease-in;
+  pointer-events: none;
+  overflow: scroll; /* só ativa o scroll se o conteúdo do modal for cumprido */
+}
+
+.modalDialog:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modalDialog > div {
+  width: 80%;
+  position: relative;
+  margin: 150px auto;
+  padding: 5px 20px 13px 20px;
+  border-radius: 10px;
+  background: #fff;
+  background: -moz-linear-gradient(#fff, #999);
+  background: -webkit-linear-gradient(#fff, #999);
+  background: -o-linear-gradient(#fff, #999);
+  -moz-box-shadow: 1px 1px 30px #000;
+  -webkit-box-shadow: 1px 1px 30px #000;
+  box-shadow: 1px 1px 30px #000;
+}
+
+.close {
+  display: block;
+  text-align: right;
+  opacity: 0.8;
+  color: var(--Botao);
+  margin-left: 97%;
+  text-decoration: none;
+  font-size: 25px;
+
+}
+
+.close:hover {
+  color: #606061;
+}
+
+h4 {
+  font-size: 40px;
+  text-align: center;
+  color: var(--Botao);
+  text-transform: uppercase;
+  padding-bottom: 1em;
+}
+
+.modal_box_2 {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+}
+
+h5 {
+  font-size: 25px;
+  margin-top: 1em;
+  margin-bottom: 1.5em;
+  text-align: center;
+  color: var(--Fonte-principal);
+  text-transform: uppercase;
+}
+
+.modal_p {
+  font-size: 25px;
+  color: var(--Botao);
+  text-align: center;
+  padding-bottom: 1em;
+}
+
+.modal-box-prices {
+  background: var(--Botao);
+  margin: 2px;
+  border-radius: 10px;
+}
+
+p.modal_p_prices {
+  font-size: 20px;
+  color: var(--Fonte-principal);
+  padding-left: 20px;
+  padding-bottom: 20px;
+}
+
+p.modal_p_prices2 {
+  font-size: 25px;
+  color: var(--Fonte-principal);
+  padding-left: 20px;
+  padding-bottom: 1.5em;
+  text-transform: uppercase;
+}
+
+.modal_box_3 {
+  background: var(--Botao);
+  border-radius: 10px;
+}
+
+.modal_box_4 {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  padding-bottom: 20px ;
+}
+
+.modal_p_prices3 {
+  font-size: auto;
+  color: var(--Fonte-principal);
+  padding: 20px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+.modal_p_taxas {
+
+  text-align: center;
+  font-size: 20px;
+  color: var(--Botao);
+  padding: 20px;
+  margin: 1px;
+  border-bottom: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+  border-top: 1px solid #ddd;
+  background-image: -webkit-gradient (linear, left top, right top, color-stop(0%,#fff), color-stop(100%,rgba(239, 239, 239, 0.5)));
+  background-image: -webkit-linear-gradient(left,#fff 0%,rgba(239, 239, 239, 0.5) 100%);
+  background-image: linear-gradient(to right,#fff 70%,rgba(239, 239, 239, 0.5) 100%);
+  text-transform: uppercase;
+}
+
+.modal_box_5 {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+}
+
+.modal_img_social {
+  width:15%;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.modal_box_social {
+  text-align: center;
+  font-size: 20px;
+  color: var(--Fonte-principal);
+  background: var(--Botao);
+  margin: 2px;
+  border-radius: 10px;
+  padding-bottom: 20px;
 }
